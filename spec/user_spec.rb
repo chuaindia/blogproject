@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe User, type: :model do
   before(:each) do
     @new_user = User.create(Name: 'Tom', Photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Teacher from Mexico.')

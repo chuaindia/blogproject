@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe Like, type: :model do
   user = User.create(Name: 'Tom', Photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Teacher from Mexico.')
   post = Post.create(AuthorId: user.id, Title: 'Hello', Text: 'This is my first post')
