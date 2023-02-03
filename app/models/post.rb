@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :likes
   after_save :update_post_counter
 
-  
+
   def update_post_counter
     author.increment!(:posts_counter)
   end
