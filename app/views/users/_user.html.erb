@@ -1,0 +1,13 @@
+<%= link_to user_path(user) do %>
+    <div>
+      <img src="<%= user.Photo %>" alt="image">
+    </div>
+      
+    <div>
+        <h2><%= user.Name %></h2>
+        <p>
+            <span>Number of posts: </span>
+            <%= user.PostsCounter || 0 %>
+        </p>
+    </div>
+<% end %>

@@ -1,0 +1,10 @@
+<section>
+    <h3>Enter new post</h3>
+    <%= form_with model: @new_post, url: user_posts_url, method: :post do |form| %>
+        <%= form.label :Title %>
+        <%= form.text_field :Title %>      
+        <%= form.label :Text %>
+        <%= form.text_area :Text %>      
+        <%= form.submit "Enter post"%>
+    <% end %> 
+</section>

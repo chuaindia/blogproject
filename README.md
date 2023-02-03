@@ -135,8 +135,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> -[ ] **[ views ]**
-> -[ ] **[ forms ]**
+> -[ ] **[ Integration specs for views ]**
+> -[ ] **[ Add Devise ]**
+> -[ ] **[ Add API endpoints ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,14 +146,6 @@ You can deploy this project using:
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check ......
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
-
-If you like this project...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
