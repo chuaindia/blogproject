@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :comments
 
   validates :Title, presence: true, length: { maximum: 250 }
-  after_initialize :set_defaults
+  
 
   validates :CommentsCounter, numericality: {
     greater_than_or_equal_to: 0,
@@ -17,6 +17,8 @@ class Post < ApplicationRecord
   }
 
   after_save :update_post_counter
+
+  private
 
   def update_post_counter
     user.increment!(:PostsCounter)
