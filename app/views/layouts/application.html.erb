@@ -7,11 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "style.css" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <div id = "header">
+        <h1> New Display </h1>
+        <h3> Created by ROR App </h3>
+      </div>
+
+      <div>
+        <%= yield %>
+      </div>
+    
+    </div>
   </body>
 </html>

@@ -1,22 +1,40 @@
-<section>
-  <div class='posts'>
-    <div class="post_headline">
-      <h5>Post # <%= @post.id %> by <%= @post.user.Name %></h5>
-      <span class='comment_like'>
-        Comments: <%= @post.CommentsCounter %>, 
-        Likes: <%= @post.LikesCounter %>
-      </span>
-    </div>
-    <p><%= @post.Text %></p>
-  </div>
+<h1>Posts</h1>
+<p> Show all posts for Malay </p>
+<div> 
 
-  <ul class='post_comment'>
-    <% if @post.CommentsCounter == 0 %>
-      <p>No comment added</p>
-    <% else %>
-      <% @post.recent_comments.each do |comment| %>
-          <li><%=comment.user.Name %>: <%= comment.Text%></li>
+    <section class="main_post">
+      <div>
+        <p>  
+            Post #<%= @post.id %> by @post.author.Name%
+        </p>
+
+        <p> 
+            <span>
+                Comments: <%= @post.CommentsCounter || 0 %>,
+                Likes: <%= @post.LikesCounter || 0 %>
+            </span
+        </p>
+      </div>
+        <p><%= @post.Text%></p>
+    </section>
+
+    <div >
+        <% @post.recent_comments.each do |comment| %>
+            <div>
+                <p> 
+                <span>
+                    <%= comment.author.Name %>:
+                </span>
+                <span>
+                    <%= comment.Text %>
+                </span>
+                </p>
+            </div>
+        
         <% end %>
+    </div>
+
+    <%= link_to new_user_post_comment_path(post_id: @post.id) do %>
+        <button>Accept comment</button>
     <% end %>
-  </ul>
-</section>
+</div>

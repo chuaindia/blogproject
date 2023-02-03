@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
-  belongs_to :user, foreign_key: 'author_id', class_name: 'User'
-  has_many :likes, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  belongs_to :author, class_name: 'User'
+  has_many :likes
+  has_many :comments
 
   validates :Title, presence: true, length: { maximum: 250 }
   after_initialize :set_defaults
@@ -24,10 +24,5 @@ class Post < ApplicationRecord
 
   def recent_comments
     comments.order(created_at: :asc).limit(5)
-  end
-
-  def set_defaults
-    self.LikesCounter ||= 0 if has_attribute? :LikesCounter
-    self.CommentsCounter ||= 0 if has_attribute? :CommentsCounter
   end
 end
