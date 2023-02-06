@@ -22,7 +22,7 @@
 
   <div>
     <% @user.recent_posts.each do |post|  %>
-    <%= link_to user_post_path(@user, Post:id) do %>
+    <%= link_to user_post_path(@user, post.id) do %>
       <p>Post <% post.id %></p>
       <p><%= post.Text %></p>
       <p> 
