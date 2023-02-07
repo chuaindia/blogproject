@@ -1,40 +1,26 @@
-<h1>Posts</h1>
-<p> Show all posts for Malay </p>
-<div> 
-
-    <section class="main_post">
-      <div>
-        <p>  
-            Post #<%= @post.id %> by @post.author.Name%
-        </p>
-
-        <p> 
-            <span>
-                Comments: <%= @post.CommentsCounter || 0 %>,
-                Likes: <%= @post.LikesCounter || 0 %>
-            </span
-        </p>
-      </div>
-        <p><%= @post.Text%></p>
-    </section>
-
-    <div >
-        <% @post.recent_comments.each do |comment| %>
-            <div>
-                <p> 
-                <span>
-                    <%= comment.author.Name %>:
-                </span>
-                <span>
-                    <%= comment.Text %>
-                </span>
-                </p>
-            </div>
-        
-        <% end %>
+<section>
+  <h2>Post Details</h2>
+  <div class="post-container">
+    <div class="post-header">
+      <h3><%= @post.title%> By <%= @post.author.name%></h3>
+      <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter %></span>
     </div>
-
-    <%= link_to new_user_post_comment_path(post_id: @post.id) do %>
-        <button>Accept comment</button>
+    <p><%= @post.text%></p>
+     <%= form_with url: user_post_likes_path(@post.author, @post), method: :post do |form| %>
+        <%= form.submit "Like", class:"submit-btn" %>
+      <% end %>
+  </div>
+  <ul class="comments-list-container">
+    <% if @post.comments_counter > 0%>
+      <%@post.comments.each do |comment|%>
+      <li><%= comment.author.name %> : <%= comment.text %></li>
+      <%end%>
+    <%else%>
+      <li>No comment<li>
+    <%end%>
+     <%= form_with model: Comment, url: user_post_comments_path(@post.author, @post),class:'comment-form', method: :post do |form| %>
+      <%= form.text_field :text, placeholder: 'Write your comment here...', class:"comment-text-cont" %>
+      <%= form.submit "Add a comment", class:"submit-btn" %>
     <% end %>
-</div>
+  </ul>
+</section>
