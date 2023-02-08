@@ -1,8 +1,15 @@
 <section>
-    <h1 >All Users</h1>
-    <div>
-        <% @users.each do |user| %>
-            <%= render partial: 'user', locals: {user: user} %>
-        <% end %>
-    </div>
+  <h2>List of Users</h2>
+  <button type="button" class="new-post-btn">
+  <%= link_to "Create A Post", new_post_path() , class: "new-post-link" %>
+  </button>
+  <ul class="users">
+    <%@users.each do |user|%>
+      <li class="users-list">
+        <a href='/users/<%= user.id %>'>
+          <%= render 'shared/user', user:user %>
+        </a>
+      </li>
+    <%end%>
+  </ul>
 </section>

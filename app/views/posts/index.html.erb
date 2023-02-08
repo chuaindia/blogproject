@@ -1,30 +1,27 @@
-<h1> Post </h1>
-<p> Show all posts for Malay</p>
-
-<div>
-    <section class="main_post">
-
-    <div>
-        <img src="<%= @user.Photo %>" alt="image">
-    </div>
-
-        <div>
-            <h2>
-                <%= @user.Name%>
-            </h2>
-            <p class="self-end text-xs">
-                Number of posts: <%= @user.PostsCounter || 0%>
-            </p>
-        </div> 
-        <div>
-            <% @user.Bio %>
-        </div>
-        
-    </section>
-
-    <section>
-        <% @user.posts.each do |post| %>
-            <%= render parial: 'post', locals: {post: post} %>
-        <% end %>
-    </section>
-</div>
+<section>
+ <h2>List of Posts</h2>
+  <%= render 'shared/user', user:@user %>
+  <ul>
+    <% @posts.each do |post|%>
+      <li>
+        <a id="show-btn-<%=post.id%>" href=<%=user_post_path(:user_id => @user.id, :id => post.id)%>>
+          <div class="post-cont">
+            <%= render 'shared/post', {user: @user, post: post} %>
+            <ul class="comments-cont">
+              <% if post.comments_counter > 0%>
+                <%post.five_recent_comments.each do |comment|%>
+                <li><%= comment.text %></li>
+                <%end%>
+              <%else%>
+                <li>No comment<li>
+              <%end%>
+            <ul>
+          </div>
+        </a>
+      </li>
+    <%end%>
+  </ul>
+  <div class="all-posts-btn">
+    <a href="#"><button type="button">Pagination</button></a>
+  </div>
+</section>

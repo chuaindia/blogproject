@@ -129,6 +129,12 @@ You can deploy this project using:
   - GitHub: (https://github.com/chuaindia)
   - LinkedIn: (https://linkedin.com/in/tanusri-ghosh-2a56b814)
   - Twitter: [@kenn_ug](https://twitter.com/@chuaghosh25)
+
+  👤 **Muyiwa Fawole**
+
+  - GitHub: [@samlorlah](https://github.com/samlorlah)
+  - LinkedIn: (https://linkedin.com/in/muyiwa-fawole)
+  - Twitter: [@samlorlah](https://twitter.com/@samlorlah)
   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
