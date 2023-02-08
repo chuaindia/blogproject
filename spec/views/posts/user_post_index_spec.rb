@@ -29,6 +29,11 @@ RSpec.describe 'user_posts/#index', type: :feature do
       post = @user.posts.first
       expect(page).to have_content("Comments: #{post.comments_counter}")
     end
+    # it 'should show how many likes a post has'
+    # do
+    #   post = @user.posts.first
+    #   expect(page).to have_content("Likes: #{post.likes_counter}")
+    # end
     it 'should have button for pagination' do
       expect(page).to have_button('Pagination')
     end
