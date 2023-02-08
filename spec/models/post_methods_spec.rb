@@ -17,7 +17,7 @@ RSpec.describe Post, type: :model do
 
   5.times.collect do
     Comment.create(
-      post: post, author: user,
+      post:, author: user,
       text: 'Long text for comment'
     )
   end

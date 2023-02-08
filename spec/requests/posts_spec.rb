@@ -20,7 +20,7 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET #index' do
     before(:each) { get user_posts_path(@user) }
-    
+
     it 'should render correct template' do
       expect(response).to render_template(:index)
     end
