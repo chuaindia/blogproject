@@ -1,8 +1,17 @@
 # frozen_string_literal: true
 
 class AddDeviseToUsers < ActiveRecord::Migration[7.0]
+  def up
+    change_table :users do |t|
+      t.remove :email
+      t.string :email
+    end
+  end
+  
   def self.up
     change_table :users do |t|
+          
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
